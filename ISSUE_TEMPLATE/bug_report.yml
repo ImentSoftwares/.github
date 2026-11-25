@@ -1,0 +1,54 @@
+name: 🐛 Reportar bug
+description: Algo não está funcionando como deveria
+title: "fix: "
+labels: ["bug", "triagem"]
+body:
+  - type: textarea
+    id: descricao
+    attributes:
+      label: O que aconteceu?
+      description: Descreva o problema de forma clara.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduzir
+    attributes:
+      label: Passos para reproduzir
+      placeholder: |
+        1. Acesse '...'
+        2. Clique em '...'
+        3. Veja o erro
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Comportamento esperado
+    validations:
+      required: true
+  - type: dropdown
+    id: ambiente
+    attributes:
+      label: Ambiente
+      options:
+        - Produção
+        - Homologação / staging
+        - Local
+    validations:
+      required: true
+  - type: dropdown
+    id: severidade
+    attributes:
+      label: Severidade
+      options:
+        - Crítica (sistema fora do ar / perda de dados)
+        - Alta (funcionalidade principal quebrada)
+        - Média (tem contorno)
+        - Baixa (cosmético)
+    validations:
+      required: true
+  - type: textarea
+    id: extras
+    attributes:
+      label: Logs, prints ou informações extras
+      description: Navegador, versão do app, sistema operacional, logs de erro...
